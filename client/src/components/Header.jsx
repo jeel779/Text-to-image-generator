@@ -1,7 +1,19 @@
 import React from 'react'
 import { motion } from "motion/react"
 import { assets } from '../assets/assets';
+import {useNavigate} from 'react-router-dom'
+import { useAppContext } from '../context/AppContext';
 const Header = () => {
+  const navigate=useNavigate();
+  const {user,setShowLogin}=useAppContext()
+  const handleClick=()=>{
+     if(user){
+        navigate('/result');
+    }
+    else{
+        setShowLogin(true);
+    }
+  }
   return (
      <motion.div
       className="flex flex-col justify-center items-center text-center my-20"
@@ -41,6 +53,7 @@ const Header = () => {
         whileTap={{ scale: 0.95 }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
+        onClick={handleClick}
         transition={{
           default: { duration: 0.5 },
           opacity: { delay: 0.8, duration: 1 },

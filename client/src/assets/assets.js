@@ -98,4 +98,4 @@ export const plans = [
       credits: 5000,
       desc: 'Best for enterprise use.'
     },
-  ]
+  ]  

@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useAppContext } from '../context/AppContext'
 import { assets } from '../assets/assets'
 const Navbar = () => {
-  const {user}=useAppContext()
+  const {user,setShowLogin}=useAppContext()
   const navigate=useNavigate()
   return (
     <div className="flex items-center justify-between py-4">
